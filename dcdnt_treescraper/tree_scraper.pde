@@ -338,7 +338,7 @@ static public class RegularStrip implements TreeStrip
   public void reorderForShortTree() {
     // swap every 2nd and 3rd element
     for (int i=0; i < pixels.size(); i++) {
-      if (i % 2 == 0 && i>0) {
+      if ((i+1) % 3 == 0 && i>0) {
         pixels.add(i-1, pixels.remove(i));
       }
     }
