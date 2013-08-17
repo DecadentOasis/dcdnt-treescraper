@@ -11,15 +11,23 @@ color weighted_get(int xpos, int ypos, int radius) {
 
   for (xoffset=-radius; xoffset<radius; xoffset++) {
     for (yoffset=-radius; yoffset<radius; yoffset++) {
-
+      int x = xpos+xoffset;
+      int y = ypos+yoffset;
+      if (x > width || x < 0)
+        continue;
+      if (y > height || y < 0)
+        continue;
+      
       pixels_counted ++;
-      thispixel = get(xpos + xoffset, ypos + yoffset);
+      thispixel = get(x, y);
       red += red(thispixel);
       green += green(thispixel);
       blue += blue(thispixel);
     }
   }
-  return color(red/pixels_counted, green/pixels_counted, blue/pixels_counted);
+  if (pixels_counted > 0)
+    return color(red/pixels_counted, green/pixels_counted, blue/pixels_counted);
+  return color(0, 0, 0);
 }
 
 int pn, sn, x, y, n = 0;
@@ -32,17 +40,18 @@ void scrape() {
   loadPixels();
   if (testObserver.hasStrips) {
     registry.startPushing();
-    List<Strip> strips = registry.getStrips();
+    List<Strip> strips = registry.getStrips(gn);
     for (Strip s : strips) {
       sn = s.getStripNumber();
       trs = ts.getStrip(gn, sn);
-      //trs = ts.getStrip(0, 0);
       if (trs != null) {
         for (PixelBlock pb : trs.getPixelBlocks()) {            
           x = pb.getXs()[0];
           y = pb.getYs()[0];
-          c = weighted_get(x, y, 20);
-          System.out.println("pn " + pn + " sn " + sn + " X " + x + " Y " + y + " color " + red(c) + " pixelno " + n + " l " + s.getLength());
+          c = get(x,y);
+          if (n == 9) {
+            System.out.println("R " + red(c) + " B " + blue(c) + " G " + green(c) + " # " + c);
+          }
           s.setPixel(c, n);         
           n++;
         }
