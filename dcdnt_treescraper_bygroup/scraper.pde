@@ -23,6 +23,7 @@ color weighted_get(int xpos, int ypos, int radius) {
 }
 
 int pn, sn, x, y, n = 0;
+int gn = 0;
 color c;
 TreeStrip trs;
 
@@ -31,23 +32,22 @@ void scrape() {
   loadPixels();
   if (testObserver.hasStrips) {
     registry.startPushing();
-    List<PixelPusher> ps = registry.getPushers();
-    for (PixelPusher p : ps) {
-      for (Strip s : p.getStrips()) {
-        pn = p.getControllerOrdinal();
-        sn = s.getStripNumber();
-        trs = ts.getStrip(pn, sn);
-        if (trs != null) {
-          for (PixelBlock pb : trs.getPixelBlocks()) {            
-            x = pb.getXs()[0];
-            y = pb.getYs()[0];
-            c = weighted_get(x, y, 10);
-            s.setPixel(c, n);         
-            n++;
-          }
-          n = 0;
+    List<Strip> strips = registry.getStrips();
+    for (Strip s : strips) {
+      sn = s.getStripNumber();
+      trs = ts.getStrip(gn, sn);
+      //trs = ts.getStrip(0, 0);
+      if (trs != null) {
+        for (PixelBlock pb : trs.getPixelBlocks()) {            
+          x = pb.getXs()[0];
+          y = pb.getYs()[0];
+          c = weighted_get(x, y, 20);
+          System.out.println("pn " + pn + " sn " + sn + " X " + x + " Y " + y + " color " + red(c) + " pixelno " + n + " l " + s.getLength());
+          s.setPixel(c, n);         
+          n++;
         }
-      }
+        n = 0;
+      } 
     }
   }
   updatePixels();
