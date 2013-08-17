@@ -17,8 +17,7 @@
 import codeanticode.syphon.*;
 
 import com.heroicrobot.dropbit.registry.*;
-import com.heroicrobot.dropbit.devices.pixelpusher.Pixel;
-import com.heroicrobot.dropbit.devices.pixelpusher.Strip;
+import com.heroicrobot.dropbit.devices.pixelpusher.*;
 
 import processing.core.*;
 import java.util.*;
