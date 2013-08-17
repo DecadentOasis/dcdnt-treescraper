@@ -335,14 +335,19 @@ static public class RegularStrip implements TreeStrip
     return yCoords;
   }
 
-  public void reorderForShortTree() {
-    // swap every 2nd and 3rd element
-    for (int i=0; i < pixels.size(); i++) {
-      if ((i+1) % 3 == 0 && i>0) {
-        pixels.add(i-1, pixels.remove(i));
+  public void reorderForShortTree(int pixelsPerBranch) {
+      for (int i=0; i < pixels.size(); i++) {
+        if ((i+1) % pixelsPerBranch == 0 && i>0) {
+          if (pixelsPerBranch==3) {
+            // swap every 2nd and 3rd element
+            pixels.add(i-1, pixels.remove(i));
+          } else if (pixelsPerBranch==4) {
+            pixels.add(i-3, pixels.remove(i));
+            pixels.add(i-1, pixels.remove(i));
+          }
+        }
       }
     }
-  }
 }
 
 static public class Point
