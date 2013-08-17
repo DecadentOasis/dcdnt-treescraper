@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 interface Tree {
-  public RegularStrip [] getStrips();
+  public TreeStrip [] getStrips();
 }
 
 interface TreeStrip {
 
-  public String getStripName();
+  public int getPusherNum();
 
   public int getStripNum();
 
@@ -72,22 +72,22 @@ static public class ShortTree implements Tree
   RegularStrip [] shortStripArray = new RegularStrip [1];
 
   public ShortTree(
-  String stripName, 
-  int stripNum, 
-  int treeXCenter, // center of tree
-  int treeYCenter, // center of tree
-  int startingAngle, // starting angle, for example 270 degrees
-  int angleIncrement, // angle increment, for example -45 degrees
-  int numPixelsPerBranch, // number of pixels per branch, tested with 3
-  int totalNumPixels, // total number of pixels per branch, tested with 24
-  int distanceToFirstPixelCenter, // spacing until first pixel center
-  int pixelSize, // for now pixel is a circle, and this is circle size
-  //      int lengthOfEachPixel,  // how much space each pixel takes up in pixels from center
-  //      int widthOfEachPixel,  // how much space each pixel takes up in pixels width-wise
-  int distanceBetweenPixelCenters  // distance to the next pixel center
+    int pusherNum, 
+    int stripNum, 
+    int treeXCenter, // center of tree
+    int treeYCenter, // center of tree
+    int startingAngle, // starting angle, for example 270 degrees
+    int angleIncrement, // angle increment, for example -45 degrees
+    int numPixelsPerBranch, // number of pixels per branch, tested with 3
+    int totalNumPixels, // total number of pixels per branch, tested with 24
+    int distanceToFirstPixelCenter, // spacing until first pixel center
+    int pixelSize, // for now pixel is a circle, and this is circle size
+    //      int lengthOfEachPixel,  // how much space each pixel takes up in pixels from center
+    //      int widthOfEachPixel,  // how much space each pixel takes up in pixels width-wise
+    int distanceBetweenPixelCenters  // distance to the next pixel center
   ) {
 
-    shortStripArray[0] = new RegularStrip(stripName, stripNum);
+    shortStripArray[0] = new RegularStrip(pusherNum, stripNum);
 
     // prepare initial coordinate
     Point p = new Point(treeXCenter, treeYCenter);
@@ -169,7 +169,7 @@ static public class ShortTree implements Tree
  */
 static public class RegularStrip implements TreeStrip
 {
-  String stripName;
+  int pusherNum;
   int stripNum;
   ArrayList<PixelBlock> pixels = new ArrayList<PixelBlock>();
 
@@ -177,23 +177,23 @@ static public class RegularStrip implements TreeStrip
   int [] [] xCoords;  
   int [] [] yCoords;
 
-  public RegularStrip(String stripName, 
-  int stripNum) {
-    this.stripName = stripName;
+  public RegularStrip(int pusherNum, 
+    int stripNum) {
+    this.pusherNum = pusherNum;
     this.stripNum = stripNum;
   }
 
-  public RegularStrip(String stripName, 
-  int stripNum, 
-  int x, 
-  int y, 
-  boolean isXYCenter, 
-  int numPixels, 
-  double angle) {
+  public RegularStrip(int pusherNum, 
+    int stripNum, 
+    int x, 
+    int y, 
+    boolean isXYCenter, 
+    int numPixels, 
+    double angle) {
 
     int desiredPixels = numPixels;
 
-    this.stripName = stripName;
+    this.pusherNum = pusherNum;
     this.stripNum = stripNum;
 
     double angleInRadians = angle * Math.PI / 180;
@@ -291,8 +291,8 @@ static public class RegularStrip implements TreeStrip
       }
     }
   }
-  public String getStripName() {
-    return stripName;
+  public int getPusherNum() {
+    return pusherNum;
   }
 
   public int getStripNum() {
@@ -423,9 +423,17 @@ public class TreeForrest {
   public static final int CANVAS_MAX_Y_SIZE = 240;
 
   ArrayList<Tree> trees = new ArrayList<Tree>();
+  HashMap<String, TreeStrip> stripMap = new HashMap<String, TreeStrip>();
 
   public void addTree(Tree tree) {
     trees.add(tree);
+    for (TreeStrip strip : tree.getStrips()) {
+      stripMap.put(strip.getPusherNum() + "_" + strip.getStripNum(), strip);
+    }
+  }
+  
+  public TreeStrip getStrip(int pusherNum, int stripNum) {
+    return stripMap.get(pusherNum + "_" + stripNum);
   }
 
   public Tree [] getTrees() {

@@ -42,7 +42,7 @@ float theta = 3.0;
 
 void setup() {
   ts = new TreeForrest();
-  ShortTree shortTree = new ShortTree("shortTripA", 1, 160, 110, 0, 45, 3, 24, 30, 10, 30);
+  ShortTree shortTree = new ShortTree(1, 1, 160, 110, 0, 45, 3, 24, 30, 10, 30);
   ts.addTree(shortTree);
   size(canvasW, canvasH, P3D);
   registry = new DeviceRegistry();
