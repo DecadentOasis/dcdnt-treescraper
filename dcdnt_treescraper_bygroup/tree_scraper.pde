@@ -121,7 +121,7 @@ static public class ShortTree implements Tree
 
     // and due to extra fucked up nature of this strip, we need to re-order a few elements
     // swapping every 2nd and 3rd elemement
-    shortStripArray[0].reorderForShortTree();
+    shortStripArray[0].reorderForShortTree(numPixelsPerBranch);
   }
 
   static public RegularPixelBlock makeCirclePixelBlock(int radiusInPixels) {
@@ -335,14 +335,19 @@ static public class RegularStrip implements TreeStrip
     return yCoords;
   }
 
-  public void reorderForShortTree() {
-    // swap every 2nd and 3rd element
-    for (int i=0; i < pixels.size(); i++) {
-      if (i % 2 == 0 && i>0) {
-        pixels.add(i-1, pixels.remove(i));
+  public void reorderForShortTree(int pixelsPerBranch) {
+      for (int i=0; i < pixels.size(); i++) {
+        if ((i+1) % pixelsPerBranch == 0 && i>0) {
+          if (pixelsPerBranch==3) {
+            // swap every 2nd and 3rd element
+            pixels.add(i-1, pixels.remove(i));
+          } else if (pixelsPerBranch==4) {
+            pixels.add(i, pixels.remove(i-3));
+            pixels.add(i-1, pixels.remove(i-2));
+          }
+        }
       }
     }
-  }
 }
 
 static public class Point

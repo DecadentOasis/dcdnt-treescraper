@@ -24,7 +24,6 @@ import java.util.*;
 
 DeviceRegistry registry;
 
-int stride = 24;
 boolean use_weighted_get = true;
 
 SyphonClient client;
@@ -42,7 +41,7 @@ float theta = 3.0;
 
 void setup() {
   ts = new TreeForrest();
-  ShortTree shortTree = new ShortTree(0, 0, 160, 110, 0, 45, 3, 24, 30, 1, 30);
+  ShortTree shortTree = new ShortTree(0, 0, 160, 110, 0, 60, 4, 24, 30, 1, 30);
   ts.addTree(shortTree);
   size(canvasW, canvasH, P3D);
   registry = new DeviceRegistry();

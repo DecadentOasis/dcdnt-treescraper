@@ -17,7 +17,7 @@ color weighted_get(int xpos, int ypos, int radius) {
         continue;
       if (y > height || y < 0)
         continue;
-      
+
       pixels_counted ++;
       thispixel = get(x, y);
       red += red(thispixel);
@@ -48,15 +48,12 @@ void scrape() {
         for (PixelBlock pb : trs.getPixelBlocks()) {            
           x = pb.getXs()[0];
           y = pb.getYs()[0];
-          c = get(x,y);
-          if (n == 9) {
-            System.out.println("R " + red(c) + " B " + blue(c) + " G " + green(c) + " # " + c);
-          }
+          c = get(x, y);
           s.setPixel(c, n);         
           n++;
         }
         n = 0;
-      } 
+      }
     }
   }
   updatePixels();
