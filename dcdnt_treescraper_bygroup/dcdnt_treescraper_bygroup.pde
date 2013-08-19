@@ -41,8 +41,16 @@ float theta = 3.0;
 
 void setup() {
   ts = new TreeForrest();
-  ShortTree shortTree = new ShortTree(0, 0, 160, 110, 0, 60, 4, 24, 30, 1, 30);
-  ts.addTree(shortTree);
+  ShortTree tree = new ShortTree(0, 0, 160, 110, 0, 60, 4, 24, 30, 1, 30);
+  
+  /*
+  RegularTree tree = new RegularTree();
+  tree.addStrip(new RegularStrip(0, 0, 160, 110, true, 18, 0));
+  tree.addStrip(new RegularStrip(0, 1, 160, 110, true, 18, 45));
+  tree.addStrip(new RegularStrip(0, 2, 160, 110, true, 18, 90));
+  tree.addStrip(new RegularStrip(0, 3, 160, 110, true, 18, 135));
+  */
+  ts.addTree(tree);
   size(canvasW, canvasH, P3D);
   registry = new DeviceRegistry();
   testObserver = new TestObserver();
