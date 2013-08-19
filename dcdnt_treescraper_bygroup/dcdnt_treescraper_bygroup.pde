@@ -31,8 +31,8 @@ PGraphics canvas;
 
 boolean ready_to_go = true;
 int lastPosition;
-int canvasW = 320;
-int canvasH = 240;
+int canvasW = 800;
+int canvasH = 600;
 TestObserver testObserver;
 TreeForrest ts;
 
@@ -41,16 +41,18 @@ float theta = 3.0;
 
 void setup() {
   ts = new TreeForrest();
-  ShortTree tree = new ShortTree(0, 0, 160, 110, 0, 60, 4, 24, 30, 1, 30);
+  ShortTree shortTree = new ShortTree(0, 0, 160, 110, 0, 60, 4, 24, 5, 1, 5);
+  ts.addTree(shortTree);
+//  ShortTree shortTree2 = new ShortTree(0, 0, 500, 300, 0, 60, 4, 24, 30, 1, 30);
+//  ts.addTree(shortTree2);
   
-  /*
-  RegularTree tree = new RegularTree();
-  tree.addStrip(new RegularStrip(0, 0, 160, 110, true, 18, 0));
-  tree.addStrip(new RegularStrip(0, 1, 160, 110, true, 18, 45));
-  tree.addStrip(new RegularStrip(0, 2, 160, 110, true, 18, 90));
-  tree.addStrip(new RegularStrip(0, 3, 160, 110, true, 18, 135));
-  */
-  ts.addTree(tree);
+  RegularTree bigtree = new RegularTree();
+  bigtree.addStrip(new RegularStrip(1, 0, 360, 410, true, 18, 0));
+  bigtree.addStrip(new RegularStrip(1, 1, 360, 410, true, 18, 45));
+  bigtree.addStrip(new RegularStrip(1, 2, 360, 410, true, 18, 90));
+  bigtree.addStrip(new RegularStrip(1, 3, 360, 410, true, 18, 135));
+  
+  ts.addTree(bigtree);
   size(canvasW, canvasH, P3D);
   registry = new DeviceRegistry();
   testObserver = new TestObserver();
@@ -69,6 +71,7 @@ void draw() {
     image(canvas, 0, 0, width, height);
   }  
   scrape();
+  //drawTrees();
 }
 
 void stop()

@@ -31,6 +31,9 @@ color weighted_get(int xpos, int ypos, int radius) {
 }
 
 int pn, sn, x, y, n = 0;
+int[] groups = new int[] {
+  0, 1
+};
 int gn = 0;
 color c;
 TreeStrip trs;
@@ -40,19 +43,21 @@ void scrape() {
   loadPixels();
   if (testObserver.hasStrips) {
     registry.startPushing();
-    List<Strip> strips = registry.getStrips(gn);
-    for (Strip s : strips) {
-      sn = s.getStripNumber();
-      trs = ts.getStrip(gn, sn);
-      if (trs != null) {
-        for (PixelBlock pb : trs.getPixelBlocks()) {            
-          x = pb.getXs()[0];
-          y = pb.getYs()[0];
-          c = get(x, y);
-          s.setPixel(c, n);         
-          n++;
+    for (int gn : groups) {
+      List<Strip> strips = registry.getStrips(gn);
+      for (Strip s : strips) {
+        sn = s.getStripNumber();
+        trs = ts.getStrip(gn, sn);
+        if (trs != null) {
+          for (PixelBlock pb : trs.getPixelBlocks()) {            
+            x = pb.getXs()[0];
+            y = pb.getYs()[0];
+            c = weighted_get(x, y, 3);
+            s.setPixel(c, n);         
+            n++;
+          }
+          n = 0;
         }
-        n = 0;
       }
     }
   }
