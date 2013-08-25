@@ -5,7 +5,7 @@ void drawTrees()
 {
   noStroke();
   fill(255,255,255);
-  rect(0,0,800,600);  
+  rect(0,0,canvasW,canvasH);  
   textSize(16);
   
   int pixelsPlaced = 0;
