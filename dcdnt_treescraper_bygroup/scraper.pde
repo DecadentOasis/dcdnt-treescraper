@@ -41,6 +41,9 @@ TreeStrip trs;
 void scrape() {
   // scrape for the strips
   loadPixels();
+  
+   TreeForrest ts = mainTreeForrest;
+  
   if (testObserver.hasStrips) {
     registry.startPushing();
     for (int gn : groups) {

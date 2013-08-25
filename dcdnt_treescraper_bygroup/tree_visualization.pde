@@ -3,10 +3,19 @@ color [] colors = new color[] {color(255,128,0), color(0,128,0), color(0,128,255
 
 void drawTrees()
 {
+
+  
+  stroke(color(255,128,0));
+  rect(overlayCenterX-240/2, overlayCenterY - 240/2, 240, 240);
+  rect(400-240/2, 310 - 240/2, 440, 440);
+  
+  
   noStroke();
   fill(255,255,255);
   rect(0,0,canvasW,canvasH);  
   textSize(16);
+  
+  TreeForrest ts = mainTreeForrest;
   
   int pixelsPlaced = 0;
     for (Tree tree : ts.getTrees()) {

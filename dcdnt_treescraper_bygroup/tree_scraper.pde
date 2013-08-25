@@ -45,14 +45,14 @@ interface PixelBlock
  */
 static public class RegularTree implements Tree
 {
-  ArrayList<RegularStrip> strips = new ArrayList<RegularStrip>();
+  ArrayList<TreeStrip> strips = new ArrayList<TreeStrip>();
 
-  public void addStrip(RegularStrip s) {
+  public void addStrip(TreeStrip s) {
     strips.add(s);
   }
 
-  public RegularStrip [] getStrips() {
-    return strips.toArray(new RegularStrip [strips.size()]);
+  public TreeStrip [] getStrips() {
+    return strips.toArray(new TreeStrip [strips.size()]);
   }
 }
 
@@ -348,6 +348,97 @@ static public class RegularStrip implements TreeStrip
         }
       }
     }
+}
+
+/**
+ * Line strip
+ * Each pixel corresponds to a single x/y coordinate on canvas
+ * Always goes left
+ *
+ */
+static public class SpacedStrip implements TreeStrip
+{
+  int pusherNum;
+  int stripNum;
+  ArrayList<PixelBlock> pixels = new ArrayList<PixelBlock>();
+
+  // precomputed arrays of coordinates for fast access
+  int [] [] xCoords;  
+  int [] [] yCoords;
+
+  public SpacedStrip(int pusherNum, 
+    int stripNum) {
+    this.pusherNum = pusherNum;
+    this.stripNum = stripNum;
+  }
+
+  public SpacedStrip(int pusherNum, 
+    int stripNum, 
+    int x, 
+    int y, 
+    int numPixels,
+    int spacingBetweenPixels
+    ) {
+
+    int desiredPixels = numPixels;
+
+    this.pusherNum = pusherNum;
+    this.stripNum = stripNum;
+
+    System.out.println("Creating " + numPixels + " pixels");
+    int startX = x;
+    int startY = y;
+    
+    for (int i=0; i < numPixels; i++) {
+      pixels.add(new RegularPixelBlock(startX, startY));
+      startX+=spacingBetweenPixels;
+    }
+  }
+  
+
+  public int getPusherNum() {
+    return pusherNum;
+  }
+
+  public int getStripNum() {
+    return stripNum;
+  }
+
+  public PixelBlock [] getPixelBlocks() {
+    return pixels.toArray(new PixelBlock[pixels.size()]);
+  }
+
+  public void addPixelBlock(PixelBlock pixelBlock) {
+    pixels.add(pixelBlock);
+  }
+
+  public int getNumPixels() {
+    return pixels.size();
+  }
+
+  /**
+   * Returns X coordinates of all pixels in array
+   * @return
+   */
+  public int [] [] getPixelXCoords() {
+    if (xCoords==null) {
+      xCoords = new int [pixels.size()][];
+      for (int i=0; i < pixels.size(); i++) {
+        xCoords[i] = pixels.get(i).getXs();
+      }
+    }
+    return xCoords;
+  }
+
+  public int [] [] getPixelYCoords() {
+    if (yCoords==null) {
+      yCoords = new int [pixels.size()][];
+      for (int i=0; i < pixels.size(); i++) {
+        yCoords[i] = pixels.get(i).getYs();
+      }
+    }
+    return yCoords;
+  }
 }
 
 static public class Point
