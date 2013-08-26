@@ -439,7 +439,8 @@ void draw() {
     image(canvas, 0, 0, width, height);
   }
   //scrape();
-  drawTrees();
+  test();
+  //drawTrees();
 }
 
 void stop()
