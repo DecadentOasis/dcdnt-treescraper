@@ -72,30 +72,30 @@ void createSpreadoutShortTrees(TreeForrest ts) {
   ts.addTree(shortTree);
   
   
-  // tree 201, strip 0
-  shortTree = new ShortTree(201, 0, 150, 200, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
-  ts.addTree(shortTree);
-  // tree 201, strip 1
-  shortTree = new ShortTree(201, 1, 150, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
-  ts.addTree(shortTree);
-  // tree 201, strip 2
-  shortTree = new ShortTree(201, 2, 200, 200, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
-  ts.addTree(shortTree);
-  // tree 201, strip 3
-  shortTree = new ShortTree(201, 3, 200, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
-  ts.addTree(shortTree);
-  
-   // tree 202, strip 0
-  shortTree = new ShortTree(202, 0, 350, 50, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 202, strip 0
+  shortTree = new ShortTree(202, 0, 150, 200, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   // tree 202, strip 1
-  shortTree = new ShortTree(202, 1, 350, 100, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  shortTree = new ShortTree(202, 1, 150, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   // tree 202, strip 2
-  shortTree = new ShortTree(202, 2, 400, 50, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  shortTree = new ShortTree(202, 2, 200, 200, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   // tree 202, strip 3
-  shortTree = new ShortTree(202, 3, 400, 100, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  shortTree = new ShortTree(202, 3, 200, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  ts.addTree(shortTree);
+  
+   // tree 201, strip 0
+  shortTree = new ShortTree(201, 0, 350, 50, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  ts.addTree(shortTree);
+  // tree 201, strip 1
+  shortTree = new ShortTree(201, 1, 350, 100, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  ts.addTree(shortTree);
+  // tree 201, strip 2
+  shortTree = new ShortTree(201, 2, 400, 50, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  ts.addTree(shortTree);
+  // tree 201, strip 3
+  shortTree = new ShortTree(201, 3, 400, 100, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   
   // tree 203, strip 0
@@ -124,30 +124,30 @@ void createSpreadoutShortTrees(TreeForrest ts) {
   shortTree = new ShortTree(205, 3, 950, 100, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   
-  // tree 204, strip 0
-  shortTree = new ShortTree(204, 0, 800, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 206, strip 0
+  shortTree = new ShortTree(206, 0, 800, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
-  // tree 204, strip 1
-  shortTree = new ShortTree(204, 1, 800, 300, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 206, strip 1
+  shortTree = new ShortTree(206, 1, 800, 300, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
-  // tree 204, strip 2
-  shortTree = new ShortTree(204, 2, 850, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 206, strip 2
+  shortTree = new ShortTree(206, 2, 850, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
-  // tree 204, strip 3
-  shortTree = new ShortTree(204, 3, 850, 300, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 206, strip 3
+  shortTree = new ShortTree(206, 3, 850, 300, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   
-    // tree 206, strip 0
-  shortTree = new ShortTree(206, 0, 750, 450, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+    // tree 208, strip 0
+  shortTree = new ShortTree(208, 0, 750, 450, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
-  // tree 205, strip 1
-  shortTree = new ShortTree(206, 1, 750, 500, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 208, strip 1
+  shortTree = new ShortTree(208, 1, 750, 500, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
-  // tree 205, strip 2
-  shortTree = new ShortTree(206, 2, 800, 450, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 208, strip 2
+  shortTree = new ShortTree(208, 2, 800, 450, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
-  // tree 205, strip 3
-  shortTree = new ShortTree(206, 3, 800, 500, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 208, strip 3
+  shortTree = new ShortTree(208, 3, 800, 500, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   
   // tree 207, strip 0
@@ -163,17 +163,17 @@ void createSpreadoutShortTrees(TreeForrest ts) {
   shortTree = new ShortTree(207, 3, 950, 500, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   
-  // tree 208, strip 0
-  shortTree = new ShortTree(208, 0, 800, 600, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 209, strip 0
+  shortTree = new ShortTree(209, 0, 800, 600, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
-  // tree 208, strip 1
-  shortTree = new ShortTree(208, 1, 800, 650, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 209, strip 1
+  shortTree = new ShortTree(209, 1, 800, 650, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
-  // tree 208, strip 2
-  shortTree = new ShortTree(208, 2, 850, 600, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 209, strip 2
+  shortTree = new ShortTree(209, 2, 850, 600, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
-  // tree 208, strip 3
-  shortTree = new ShortTree(208, 3, 850, 650, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  // tree 209, strip 3
+  shortTree = new ShortTree(209, 3, 850, 650, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
 }
 
@@ -299,7 +299,7 @@ void createOverlayShortTrees(TreeForrest ts) {
 
 
 void createSpreadoutBigTrees(TreeForrest ts) {
-  // tree 100, strip 0-4
+  // tree 100, strip 0-3
   bigtree = new RegularTree();
   bigtree.addStrip(new RegularStrip(100, 0, 400, 310, true, 240, 0));
   bigtree.addStrip(new RegularStrip(100, 1, 400, 310, true, 240, 45));
@@ -307,26 +307,26 @@ void createSpreadoutBigTrees(TreeForrest ts) {
   bigtree.addStrip(new RegularStrip(100, 3, 400, 310, true, 240, 135));
   ts.addTree(bigtree);
   
-  // tree 101, strip 0-4
+  // tree 100, strip 4-7
   bigtree = new RegularTree();
-  bigtree.addStrip(new RegularStrip(101, 0, 600, 310, true, 240, 0));
-  bigtree.addStrip(new RegularStrip(101, 1, 600, 310, true, 240, 45));
-  bigtree.addStrip(new RegularStrip(101, 2, 600, 310, true, 240, 90));
-  bigtree.addStrip(new RegularStrip(101, 3, 600, 310, true, 240, 135));
+  bigtree.addStrip(new RegularStrip(100, 4, 600, 310, true, 240, 0));
+  bigtree.addStrip(new RegularStrip(100, 5, 600, 310, true, 240, 45));
+  bigtree.addStrip(new RegularStrip(100, 6, 600, 310, true, 240, 90));
+  bigtree.addStrip(new RegularStrip(100, 7, 600, 310, true, 240, 135));
   ts.addTree(bigtree);
   
-  // tree 102, strip 0-4
+  // tree 101, strip 0-3
   bigtree = new RegularTree();
-  bigtree.addStrip(new RegularStrip(102, 0, 500, 510, true, 240, 0));
-  bigtree.addStrip(new RegularStrip(102, 1, 500, 510, true, 240, 45));
-  bigtree.addStrip(new RegularStrip(102, 2, 500, 510, true, 240, 90));
-  bigtree.addStrip(new RegularStrip(102, 3, 500, 510, true, 240, 135));
+  bigtree.addStrip(new RegularStrip(101, 0, 500, 510, true, 240, 0));
+  bigtree.addStrip(new RegularStrip(101, 1, 500, 510, true, 240, 45));
+  bigtree.addStrip(new RegularStrip(101, 2, 500, 510, true, 240, 90));
+  bigtree.addStrip(new RegularStrip(101, 3, 500, 510, true, 240, 135));
   ts.addTree(bigtree);
 }
 
 
 void createOverlayBigTrees(TreeForrest ts) {
-  // tree 100, strip 0-4
+  // tree 100, strip 0-3
   bigtree = new RegularTree();
   bigtree.addStrip(new RegularStrip(100, 0, overlayCenterX, overlayCenterY, true, 240, 0));
   bigtree.addStrip(new RegularStrip(100, 1, overlayCenterX, overlayCenterY, true, 240, 45));
@@ -334,20 +334,20 @@ void createOverlayBigTrees(TreeForrest ts) {
   bigtree.addStrip(new RegularStrip(100, 3, overlayCenterX, overlayCenterY, true, 240, 135));
   ts.addTree(bigtree);
   
-  // tree 101, strip 0-4
+  // tree 101, strip 4-7
+  bigtree = new RegularTree();
+  bigtree.addStrip(new RegularStrip(100, 4, overlayCenterX, overlayCenterY, true, 240, 0));
+  bigtree.addStrip(new RegularStrip(100, 5, overlayCenterX, overlayCenterY, true, 240, 45));
+  bigtree.addStrip(new RegularStrip(100, 6, overlayCenterX, overlayCenterY, true, 240, 90));
+  bigtree.addStrip(new RegularStrip(100, 7, overlayCenterX, overlayCenterY, true, 240, 135));
+  ts.addTree(bigtree);
+  
+  // tree 101, strip 0-3
   bigtree = new RegularTree();
   bigtree.addStrip(new RegularStrip(101, 0, overlayCenterX, overlayCenterY, true, 240, 0));
   bigtree.addStrip(new RegularStrip(101, 1, overlayCenterX, overlayCenterY, true, 240, 45));
   bigtree.addStrip(new RegularStrip(101, 2, overlayCenterX, overlayCenterY, true, 240, 90));
   bigtree.addStrip(new RegularStrip(101, 3, overlayCenterX, overlayCenterY, true, 240, 135));
-  ts.addTree(bigtree);
-  
-  // tree 102, strip 0-4
-  bigtree = new RegularTree();
-  bigtree.addStrip(new RegularStrip(102, 0, overlayCenterX, overlayCenterY, true, 240, 0));
-  bigtree.addStrip(new RegularStrip(102, 1, overlayCenterX, overlayCenterY, true, 240, 45));
-  bigtree.addStrip(new RegularStrip(102, 2, overlayCenterX, overlayCenterY, true, 240, 90));
-  bigtree.addStrip(new RegularStrip(102, 3, overlayCenterX, overlayCenterY, true, 240, 135));
   ts.addTree(bigtree);
 }
 
@@ -355,7 +355,7 @@ void addLoungeStrips(TreeForrest ts) {
    // what is the group for these strips
    // straight lines 103, strip 0-4
   bigtree = new RegularTree();
-  bigtree.addStrip(new HoldedStrip(103, 0, 280, 700, 24, 13, 10));
+  bigtree.addStrip(new HoldedStrip(300, 0, 280, 700, 24, 13, 10));
   ts.addTree(bigtree);
 }
 
@@ -438,8 +438,8 @@ void draw() {
     canvas = client.getGraphics(canvas);
     image(canvas, 0, 0, width, height);
   }
-  //scrape();
-  test();
+  scrape();
+  //test();
   //drawTrees();
 }
 

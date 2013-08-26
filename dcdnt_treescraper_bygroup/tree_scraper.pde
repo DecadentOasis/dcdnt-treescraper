@@ -113,7 +113,7 @@ static public class ShortTree implements Tree
       if (pixelsOnCurBranch>=numPixelsPerBranch) {
         pixelsOnCurBranch = 0;
         currentAngle = (360 + currentAngle + angleIncrement) % 360;
-        System.out.println("New angle " + currentAngle);
+        //System.out.println("New angle " + currentAngle);
         p = new Point(treeXCenter, treeYCenter);
         p.move(distanceToFirstPixelCenter, currentAngle);
       }
@@ -198,7 +198,7 @@ static public class RegularStrip implements TreeStrip
 
     double angleInRadians = angle * Math.PI / 180;
 
-    System.out.println("Creating " + numPixels + " pixels");
+    //System.out.println("Creating " + numPixels + " pixels");
     int startX = x;
     int startY = y;
     int endX;
@@ -222,13 +222,13 @@ static public class RegularStrip implements TreeStrip
     line(startX, startY, endX, endY, pixels);
     if (pixels.size()==desiredPixels) {
       // perfect fit
-      System.out.println("Got " + pixels.size() + ". Perfect");
+      //System.out.println("Got " + pixels.size() + ". Perfect");
     } 
     {
       if (pixels.size()<desiredPixels) {
         // rescale and try again
         int reusePixels = desiredPixels - pixels.size();
-        System.out.println("Got " + pixels.size() + " so adding " + reusePixels + " extra pixels");
+        //System.out.println("Got " + pixels.size() + " so adding " + reusePixels + " extra pixels");
         double insertionRatio = (double)desiredPixels / pixels.size();
         int insertedPixels = 0;
         for (int i=0; i < pixels.size(); i++) {
@@ -244,11 +244,11 @@ static public class RegularStrip implements TreeStrip
           pixels.add(new RegularPixelBlock(tail));
           insertedPixels++;
         }
-        System.out.println("Was supposed to insert " + reusePixels + " and actually inserted " + insertedPixels);
+        //System.out.println("Was supposed to insert " + reusePixels + " and actually inserted " + insertedPixels);
       } 
       else {
         // trim down
-        System.out.println("Trimming down strip from " + pixels.size() + " to " + desiredPixels);
+        //System.out.println("Trimming down strip from " + pixels.size() + " to " + desiredPixels);
         while (pixels.size ()!=desiredPixels) {
           pixels.remove(pixels.size()-1);
         }
@@ -386,7 +386,7 @@ static public class HoldedStrip implements TreeStrip
     this.pusherNum = pusherNum;
     this.stripNum = stripNum;
 
-    System.out.println("Creating " + numPixels + " pixels");
+    //System.out.println("Creating " + numPixels + " pixels");
     int startX = x;
     int startY = y;
     
@@ -461,7 +461,7 @@ static public class Point
     double angleInRadians = angle * Math.PI / 180;
     x = x + (int)(numPixels * Math.cos(angleInRadians));
     y = y - (int)(numPixels * Math.sin(angleInRadians));
-    System.out.println("Moved to " + x + " " + y);
+    //System.out.println("Moved to " + x + " " + y);
   }
 
   public int getX() { 
@@ -540,6 +540,10 @@ public class TreeForrest {
 
   public Tree [] getTrees() {
     return trees.toArray(new Tree [trees.size()]);
+  }
+  
+  public int getNumStrips() {
+    return trees.size();
   }
 }
 

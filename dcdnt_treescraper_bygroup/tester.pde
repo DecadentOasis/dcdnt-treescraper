@@ -1,8 +1,8 @@
 
-int testGroup = 200;
-int stripNumToTest = 0;
+int testGroup = 206;
+int stripNumToTest = 3;
 int curNumPixel = 0;
-int maxCyclesToHold = 20;
+int maxCyclesToHold = 5;
 int curCycle = 0;
 
 void test() {
@@ -12,13 +12,19 @@ void test() {
    TreeForrest ts = mainTreeForrest;
   
   if (testObserver.hasStrips) {
+    println("Testing group " + testGroup + " strip " + stripNumToTest + " pixel " + curNumPixel);
+
     registry.startPushing();
     List<Strip> strips = registry.getStrips(testGroup);
     for (Strip s : strips) {
         sn = s.getStripNumber();
-        trs = ts.getStrip(gn, sn);
+        trs = ts.getStrip((testGroup), sn);
         if (trs != null) {
-          for (int pixel=0; pixel < trs.getNumPixels(); pixel++) {
+          int numPixelsOnStrip = trs.getNumPixels();
+          if (curNumPixel>numPixelsOnStrip) {
+            curNumPixel = 0;
+          }
+          for (int pixel=0; pixel < numPixelsOnStrip; pixel++) {
             if (sn==stripNumToTest && pixel==curNumPixel) {
               s.setPixel(color(255,255,255), pixel);
             } else {
@@ -33,7 +39,6 @@ void test() {
     if (curCycle>maxCyclesToHold) {
       curCycle=0;
       curNumPixel++;
-      println("Testing group " + testGroup + " strip " + stripNumToTest + " pixel " + curNumPixel);
     }
   }
   updatePixels();
