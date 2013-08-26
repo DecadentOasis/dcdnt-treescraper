@@ -356,7 +356,7 @@ static public class RegularStrip implements TreeStrip
  * Always goes left
  *
  */
-static public class SpacedStrip implements TreeStrip
+static public class HoldedStrip implements TreeStrip
 {
   int pusherNum;
   int stripNum;
@@ -366,17 +366,18 @@ static public class SpacedStrip implements TreeStrip
   int [] [] xCoords;  
   int [] [] yCoords;
 
-  public SpacedStrip(int pusherNum, 
+  public HoldedStrip(int pusherNum, 
     int stripNum) {
     this.pusherNum = pusherNum;
     this.stripNum = stripNum;
   }
 
-  public SpacedStrip(int pusherNum, 
+  public HoldedStrip(int pusherNum, 
     int stripNum, 
     int x, 
     int y, 
     int numPixels,
+    int holdPoint,
     int spacingBetweenPixels
     ) {
 
@@ -389,9 +390,14 @@ static public class SpacedStrip implements TreeStrip
     int startX = x;
     int startY = y;
     
-    for (int i=0; i < numPixels; i++) {
+    for (int i=0; i < holdPoint; i++) {
       pixels.add(new RegularPixelBlock(startX, startY));
       startX+=spacingBetweenPixels;
+    }
+    startX+=spacingBetweenPixels/2;
+    for (int i=holdPoint; i < numPixels; i++) {
+      startX-=spacingBetweenPixels;
+      pixels.add(new RegularPixelBlock(startX, startY));
     }
   }
   

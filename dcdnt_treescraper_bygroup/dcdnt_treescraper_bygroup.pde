@@ -317,7 +317,7 @@ void createSpreadoutBigTrees(TreeForrest ts) {
   
   // tree 102, strip 0-4
   bigtree = new RegularTree();
-  bigtree.addStrip(new RegularStrip(102, 0, 0, 510, true, 240, 0));
+  bigtree.addStrip(new RegularStrip(102, 0, 500, 510, true, 240, 0));
   bigtree.addStrip(new RegularStrip(102, 1, 500, 510, true, 240, 45));
   bigtree.addStrip(new RegularStrip(102, 2, 500, 510, true, 240, 90));
   bigtree.addStrip(new RegularStrip(102, 3, 500, 510, true, 240, 135));
@@ -355,9 +355,7 @@ void addLoungeStrips(TreeForrest ts) {
    // what is the group for these strips
    // straight lines 103, strip 0-4
   bigtree = new RegularTree();
-  bigtree.addStrip(new SpacedStrip(103, 0, 280, 700, 240, 3));
-  bigtree.addStrip(new SpacedStrip(103, 1, 281, 700, 240, 3));
-  bigtree.addStrip(new SpacedStrip(103, 2, 282, 700, 240, 3));
+  bigtree.addStrip(new HoldedStrip(103, 0, 280, 700, 24, 13, 10));
   ts.addTree(bigtree);
 }
 
