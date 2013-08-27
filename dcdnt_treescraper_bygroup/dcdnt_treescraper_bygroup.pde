@@ -73,16 +73,16 @@ void createSpreadoutShortTrees(TreeForrest ts) {
   
   
   // tree 202, strip 0
-  shortTree = new ShortTree(202, 0, 150, 200, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  shortTree = new ShortTree(202, 0, 150, 400, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   // tree 202, strip 1
-  shortTree = new ShortTree(202, 1, 150, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  shortTree = new ShortTree(202, 1, 150, 450, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   // tree 202, strip 2
-  shortTree = new ShortTree(202, 2, 200, 200, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  shortTree = new ShortTree(202, 2, 200, 400, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   // tree 202, strip 3
-  shortTree = new ShortTree(202, 3, 200, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  shortTree = new ShortTree(202, 3, 200, 450, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
   
    // tree 201, strip 0
@@ -175,6 +175,19 @@ void createSpreadoutShortTrees(TreeForrest ts) {
   // tree 209, strip 3
   shortTree = new ShortTree(209, 3, 850, 650, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
   ts.addTree(shortTree);
+  
+    // tree 210, strip 0
+  shortTree = new ShortTree(210, 0, 100, 200, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  ts.addTree(shortTree);
+  // tree 210, strip 1
+  shortTree = new ShortTree(210, 1, 100, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  ts.addTree(shortTree);
+  // tree 210, strip 2
+  shortTree = new ShortTree(210, 2, 150, 200, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  ts.addTree(shortTree);
+  // tree 210, strip 3
+  shortTree = new ShortTree(210, 3, 150, 250, 0, 60, 4, 24, smallTreeSpacing, 1, smallTreeSpacing);
+  ts.addTree(shortTree);
 }
 
 void createOverlayShortTrees(TreeForrest ts) {
@@ -243,20 +256,7 @@ void createOverlayShortTrees(TreeForrest ts) {
   // tree 205, strip 3
   shortTree = new ShortTree(205, 3, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
   ts.addTree(shortTree);
-  
-  // tree 204, strip 0
-  shortTree = new ShortTree(204, 0, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
-  ts.addTree(shortTree);
-  // tree 204, strip 1
-  shortTree = new ShortTree(204, 1, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
-  ts.addTree(shortTree);
-  // tree 204, strip 2
-  shortTree = new ShortTree(204, 2, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
-  ts.addTree(shortTree);
-  // tree 204, strip 3
-  shortTree = new ShortTree(204, 3, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
-  ts.addTree(shortTree);
-  
+    
     // tree 206, strip 0
   shortTree = new ShortTree(206, 0, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
   ts.addTree(shortTree);
@@ -295,6 +295,32 @@ void createOverlayShortTrees(TreeForrest ts) {
   // tree 208, strip 3
   shortTree = new ShortTree(208, 3, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
   ts.addTree(shortTree);
+ 
+  // tree 209, strip 0
+  shortTree = new ShortTree(209, 0, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
+  ts.addTree(shortTree);
+  // tree 209, strip 1
+  shortTree = new ShortTree(209, 1, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
+  ts.addTree(shortTree);
+  // tree 209, strip 2
+  shortTree = new ShortTree(209, 2, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
+  ts.addTree(shortTree);
+  // tree 209, strip 3
+  shortTree = new ShortTree(209, 3, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
+  ts.addTree(shortTree);  
+ 
+  // tree 210, strip 0
+  shortTree = new ShortTree(210, 0, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
+  ts.addTree(shortTree);
+  // tree 210, strip 1
+  shortTree = new ShortTree(210, 1, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
+  ts.addTree(shortTree);
+  // tree 210, strip 2
+  shortTree = new ShortTree(210, 2, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
+  ts.addTree(shortTree);
+  // tree 210, strip 3
+  shortTree = new ShortTree(210, 3, overlayCenterX, overlayCenterY, 0, 60, 4, 24, smallTreeOverlaySpacing, 1, smallTreeOverlaySpacing);
+  ts.addTree(shortTree);   
 }
 
 

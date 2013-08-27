@@ -1,5 +1,5 @@
 
-int testGroup = 206;
+int testGroup = 210;
 int stripNumToTest = 3;
 int curNumPixel = 0;
 int maxCyclesToHold = 5;

@@ -32,7 +32,7 @@ color weighted_get(int xpos, int ypos, int radius) {
 
 int pn, sn, x, y, n = 0;
 int[] groups = new int[] {
-  200, 201, 202, 203, 205, 206, 207, 208, 209, 100, 101, 300
+  200, 201, 202, 203, 205, 206, 207, 208, 209, 210, 100, 101, 300
 };
 int gn = 200;
 color c;
