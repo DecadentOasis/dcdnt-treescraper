@@ -57,7 +57,7 @@ void scrape() {
           for (PixelBlock pb : trs.getPixelBlocks()) {            
             x = pb.getXs()[0];
             y = pb.getYs()[0];
-            c = weighted_get(x, y, 1);
+            c = weighted_get(x, y, 2);
             s.setPixel(c, n);         
             n++;
           }

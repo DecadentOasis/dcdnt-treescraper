@@ -416,7 +416,7 @@ void setup() {
   registry = new DeviceRegistry();
   testObserver = new TestObserver();
   registry.addObserver(testObserver);
-  registry.setAntiLog(true);
+  registry.setAntiLog(false);
   background(0);
   client = new SyphonClient(this, "Modul8", "Main View");
 }
