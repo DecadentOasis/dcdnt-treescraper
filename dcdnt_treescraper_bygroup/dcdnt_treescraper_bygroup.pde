@@ -348,6 +348,15 @@ void createSpreadoutBigTrees(TreeForrest ts) {
   bigtree.addStrip(new RegularStrip(101, 2, 500, 510, true, 240, 90));
   bigtree.addStrip(new RegularStrip(101, 3, 500, 510, true, 240, 135));
   ts.addTree(bigtree);
+  
+}
+
+void createDjBoothTree(TreeForrest ts) {
+   // tree 500, strip 0-1
+  bigtree = new RegularTree();
+  bigtree.addStrip(new RegularStrip(500, 0, 500, 510, true, 240, 0));
+  bigtree.addStrip(new RegularStrip(500, 1, 500, 510, true, 240, 45));
+  ts.addTree(bigtree);
 }
 
 
@@ -390,7 +399,8 @@ void setup() {
   scene0 = new TreeForrest();
   createSpreadoutShortTrees(scene0);
   createSpreadoutBigTrees(scene0);
-  addLoungeStrips(scene0);
+  createDjBoothTree(scene0);
+  //addLoungeStrips(scene0);
 
   // scene 1 - short spread out, big overlay
   scene1 = new TreeForrest();
@@ -419,6 +429,7 @@ void setup() {
   registry.setAntiLog(false);
   background(0);
   client = new SyphonClient(this, "Modul8", "Main View");
+  //client = new SyphonClient(this, "Arena", "Composition");
 }
 
 

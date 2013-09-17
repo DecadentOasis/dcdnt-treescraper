@@ -12,7 +12,7 @@ void drawTrees()
   
   noStroke();
   fill(255,255,255);
-  rect(0,0,canvasW,canvasH);  
+  //rect(0,0,canvasW,canvasH);  
   textSize(16);
   
   TreeForrest ts = mainTreeForrest;

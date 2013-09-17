@@ -32,7 +32,7 @@ color weighted_get(int xpos, int ypos, int radius) {
 
 int pn, sn, x, y, n = 0;
 int[] groups = new int[] {
-  200, 201, 202, 203, 205, 206, 207, 208, 209, 210, 100, 101, 300
+  200, 201, 202, 203, 205, 206, 207, 208, 209, 210, 100, 101, 300, 500
 };
 int gn = 200;
 color c;
@@ -48,11 +48,11 @@ void scrape() {
     registry.startPushing();
     for (int gn : groups) {
       List<Strip> strips = registry.getStrips(gn);
-      println("Looking for group "  + gn);
+      // println("Looking for group "  + gn);
       for (Strip s : strips) {
         sn = s.getStripNumber();
         trs = ts.getStrip(gn, sn);
-        println("Looking for group "  + gn + " strip " + sn);
+        // println("Looking for group "  + gn + " strip " + sn);
         if (trs != null) {
           for (PixelBlock pb : trs.getPixelBlocks()) {            
             x = pb.getXs()[0];
@@ -62,7 +62,7 @@ void scrape() {
             n++;
           }
           n = 0;
-        }
+        } 
       }
     }
   }
